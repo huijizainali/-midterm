@@ -7,7 +7,7 @@
 **本文使用VOC格式进行训练，训练前需要下载好VOC07+12的数据集，解压后放在根目录**  
 
 2. 直接运行mixup、cutmix、baseline、cutout文件即可开始训练和测试。
-本次实验由于主要目的是比较mixup、cutup和cutmix三种方法的性能表现，因而不对Resnet网络结构进行调整。
+3. 本次实验由于主要目的是比较mixup、cutup和cutmix三种方法的性能表现，因而不对Resnet网络结构进行调整。
 将Batch_size设置为128，将epoch设置为100,
 优化器则选择最简单的SGD，其中将momentum参数设置为0.9，weight_decay值即权值衰减率设置为0.0005。初始学习率定位0.1。损失函数才用交叉熵损失函数，对模型的预测结果的评价指标采用Accuracy = 1 – 总体错分率。
 
