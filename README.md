@@ -3,9 +3,9 @@
 ### 在VOC数据集上训练并测试目标检测模型Faster R-CNN和YOLO V3；在四张测试图像上可视化Faster R-CNN第一阶段的proposal box；两个训练好后的模型分别可视化三张不在VOC数据集内，但是包含有VOC中类别物体的图像的检测结果（类别标签，得分，boundingbox），并进行对比，一共show六张图像；
 
 ## Resnet-18
-1:数据集准备：在网络上下载好CIFAR10数据集，解压后放入根目录中，也可以直接用torchvision.datasets.CIFAR10函数下载。
-2：直接运行mixup、cutmix、baseline、cutout文件即可开始训练和测试。
-本次实验由于主要目的是比较mixup、cutup和cutmix三种方法的性能表现，因而不对Resnet网络结构进行调整。
+1:数据集准备：在网络上下载好CIFAR10数据集，解压后放入根目录中，也可以直接用torchvision.datasets.CIFAR10函数下载。 \\
+2：直接运行mixup、cutmix、baseline、cutout文件即可开始训练和测试。 \\
+本次实验由于主要目的是比较mixup、cutup和cutmix三种方法的性能表现，因而不对Resnet网络结构进行调整。 \\
 由于计算机显存限制，将Batch_size设置为128，开始训练。每次运行50个epoch，并查看loss曲线下降情况。在100次epoch之后，发现loss下降幅度很小，因此最终将epoch设置为100。
 优化器则选择最简单的SGD，其中将momentum参数设置为0.9，weight_decay值即权值衰减率设置为0.0005。初始学习率定位0.1。损失函数才用交叉熵损失函数，对模型的预测结果的评价指标采用Accuracy = 1 – 总体错分率。
 
